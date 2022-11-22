@@ -4,12 +4,13 @@ import shutil
 with open('.mkdocs/conf.yml') as file:
   conf = yaml.safe_load(file)
 
-  print('Move mkdocs.yml to route')
+  print('INFO - Moving config file: mkdocs.yml')
   shutil.copy('.mkdocs/mkdocs.yml', './')
 
-  print('Move top md to docs')
-  shutil.copy(conf['top'], 'docs/')
+  top_md = conf['top']
+  print(f'INFO - Moving top md file: {top_md}')
+  shutil.copy(top_md, 'docs/')
 
   for doc in conf['docs']:
-    print(f'Move {doc} to docs/')
+    print(f'INFO - Moving document: {doc}')
     shutil.copytree(doc, f'docs/{doc}', dirs_exist_ok=True)
