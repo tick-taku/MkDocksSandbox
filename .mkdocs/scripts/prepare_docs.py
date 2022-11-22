@@ -3,7 +3,7 @@ import shutil
 import os
 
 print('INFO - mkdir docs')
-os.mkdir('docs/')
+os.makedirs('docs/', exist_ok=True)
 
 with open('.mkdocs/conf.yml') as file:
   conf = yaml.safe_load(file)
