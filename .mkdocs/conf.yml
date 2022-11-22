@@ -2,4 +2,4 @@ top: 'mkdocs/index.md'
 docs:
   - dailynote
   - blog
-  - source
+  - note
