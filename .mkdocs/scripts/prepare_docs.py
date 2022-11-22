@@ -1,5 +1,9 @@
 import yaml
 import shutil
+import os
+
+print('INFO - mkdir docs')
+os.mkdir('docs/')
 
 with open('.mkdocs/conf.yml') as file:
   conf = yaml.safe_load(file)
