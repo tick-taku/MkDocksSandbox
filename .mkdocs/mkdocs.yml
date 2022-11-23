@@ -11,6 +11,7 @@ theme:
   features:
     - tabs
 markdown_extensions:
+  - codehilite
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
