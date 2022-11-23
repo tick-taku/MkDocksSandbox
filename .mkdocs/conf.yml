@@ -1,4 +1,6 @@
 top: 'mkdocs/index.md'
+logo: '.mkdocs/icon/android.png'
+favicon: '.mkdocs/icon/android.png'
 docs:
   - dailynote
   - blog

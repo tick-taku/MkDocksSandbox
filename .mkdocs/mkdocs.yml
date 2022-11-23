@@ -2,6 +2,8 @@ site_name: My Dialy
 theme:
   name: material
   language: ja
+  logo: android.png
+  favicon: android.png
   palette:
     scheme: slate
     primary: blue
