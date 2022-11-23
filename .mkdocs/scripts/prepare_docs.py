@@ -29,6 +29,11 @@ with open(f'{PREFERENCE_DIR}/conf.yml') as file:
     print(f'INFO - Moving favicon image file: {favicon}')
     shutil.copy(favicon, f'{DOCKS_DIR}/{os.path.basename(favicon)}')
 
+  if 'mds' in conf:
+    for md in conf['mds']:
+      print(f'INFO - Moving md file: {md}')
+      shutil.copy(md, f'{DOCKS_DIR}/{os.path.basename(md)}')
+
   for doc in conf['docs']:
     print(f'INFO - Moving document: {doc}')
     shutil.copytree(doc, f'{DOCKS_DIR}/{doc}', dirs_exist_ok=True)
