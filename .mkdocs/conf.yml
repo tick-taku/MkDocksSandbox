@@ -1,9 +1,10 @@
 top: 'mkdocs/index.md'
 logo: '.mkdocs/icon/android.png'
 favicon: '.mkdocs/icon/android.png'
+custom_theme: 'override'
 docs:
   - dailynote
   - blog
   - ノート
-mds:
+files:
   - 'menu/about.md'

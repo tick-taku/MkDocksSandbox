@@ -8,8 +8,8 @@ DOCKS_DIR = 'docs'
 print('INFO - mkdir docs')
 os.makedirs(DOCKS_DIR, exist_ok=True)
 
-with open(f'{PREFERENCE_DIR}/conf.yml') as file:
-  conf = yaml.safe_load(file)
+with open(f'{PREFERENCE_DIR}/conf.yml') as conf_file:
+  conf = yaml.safe_load(conf_file)
 
   print('INFO - Moving config file: mkdocs.yml')
   shutil.copy(f'{PREFERENCE_DIR}/mkdocs.yml', './')
@@ -29,11 +29,16 @@ with open(f'{PREFERENCE_DIR}/conf.yml') as file:
     print(f'INFO - Moving favicon image file: {favicon}')
     shutil.copy(favicon, f'{DOCKS_DIR}/{os.path.basename(favicon)}')
 
-  if 'mds' in conf:
-    for md in conf['mds']:
-      print(f'INFO - Moving md file: {md}')
-      shutil.copy(md, f'{DOCKS_DIR}/{os.path.basename(md)}')
+  if 'files' in conf:
+    for file in conf['files']:
+      print(f'INFO - Moving file: {file}')
+      shutil.copy(file, f'{DOCKS_DIR}/{os.path.basename(file)}')
 
   for doc in conf['docs']:
     print(f'INFO - Moving document: {doc}')
     shutil.copytree(doc, f'{DOCKS_DIR}/{doc}', dirs_exist_ok=True)
+
+  if 'custom_theme' in conf:
+    theme = conf['custom_theme']
+    print(f'INFO - Moving custom theme dir: {theme}')
+    shutil.copytree(f'{PREFERENCE_DIR}/{theme}', theme, dirs_exist_ok=True)

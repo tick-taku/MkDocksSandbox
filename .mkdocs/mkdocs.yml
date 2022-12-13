@@ -1,6 +1,10 @@
-site_name: My Dialy
+site_name: My diary
+site_description: diary.
+site_author: tick-taku
+site_url: 'https://tick-taku.com'
 theme:
   name: material
+  cutom_dir: override
   language: ja
   logo: android.png
   favicon: android.png
@@ -8,10 +12,24 @@ theme:
     scheme: slate
     primary: blue
     accent: orange
+  font:
+    text: Ricty Diminished
+    code: Ricty Diminished Discord
   features:
     - tabs
+plugins:
+  - search:
+      lang: ja
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: 'https://twitter.com/tick_taku77'
+    - icon: fontawesome/brands/github
+      link: 'https://github.com/tick-taku'
 markdown_extensions:
+  - admonition
   - codehilite
+  - pymdownx.magiclink
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
