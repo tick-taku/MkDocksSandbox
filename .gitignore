@@ -157,3 +157,4 @@ cython_debug/
 # for MkDocs
 docs/
 mkdocs.yml
+override/
